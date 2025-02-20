@@ -1,0 +1,22 @@
+{
+    "name": "Apartment Investment Model Calculator",
+    "short_name": "ApartmentModelling",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#FF5A5F",
+    "description": "Calculate ROI for your apartment investments based on global and seasonal assumptions.",
+    "icons": [
+      {
+        "src": "icons/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

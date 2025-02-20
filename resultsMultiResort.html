@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Resort Investment Results</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Investment Model Results</h1>
+      <p>Below is the comparison of 2.5‑Room (60 m²) Apartments Across Resorts followed by the detailed monthly breakdown by resort.</p>
+    </header>
+    
+    <!-- Comparison Section -->
+    <div class="card">
+      <section id="comparisonSection">
+        <h3 class="section-header">Comparison of 2.5‑Room Apartments Across Resorts</h3>
+      </section>
+    </div>
+    
+    <!-- Monthly Breakdown Section -->
+    <div class="card">
+      <section id="breakdownSection">
+        <h3 class="section-header">Monthly Breakdown by Resort</h3>
+      </section>
+    </div>
+    
+    <!-- Back Button -->
+    <div class="card">
+      <button class="calculate-btn" onclick="goBack()">Back</button>
+    </div>
+  </div>
+  
+  <script>
+    function displayResults() {
+      const comparison = localStorage.getItem("baseResults");
+      const monthlyBreakdown = localStorage.getItem("seasonBreakdownResults");
+      
+      const comparisonSection = document.getElementById("comparisonSection");
+      const breakdownSection = document.getElementById("breakdownSection");
+      
+      comparisonSection.innerHTML += comparison || "<p>No comparison table found. Please calculate your model first.</p>";
+      breakdownSection.innerHTML += monthlyBreakdown || "<p>No monthly breakdown found. Please calculate your model first.</p>";
+    }
+    
+    function goBack() {
+      window.location.href = "multiResortModel.html";
+    }
+    
+    // Populate results on page load
+    displayResults();
+  </script>
+</body>
+</html>

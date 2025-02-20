@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multi-Resort 12-Month Model</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="js/multiResortApp.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Multi-Resort 12‑Month Model (2.5‑Room Apartment)</h1>
+      <p>
+        Customize your assumptions below. The fields are prepopulated with sample data.
+      </p>
+    </header>
+
+    <!-- Global Financial Assumptions -->
+    <div class="card">
+      <h3>Global Financial Assumptions</h3>
+      <table>
+        <tr>
+          <th>Down Payment (%)</th>
+          <th>Interest Rate (%)</th>
+          <th>Operating Expense Rate (%)</th>
+        </tr>
+        <tr>
+          <td><input type="number" id="downPaymentPerc" value="20"></td>
+          <td><input type="number" id="interestRate" value="1.5" step="0.1"></td>
+          <td><input type="number" id="expenseRate" value="25" step="0.1"></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Monthly Occupancy Assumptions (Columns as Months) -->
+    <div class="card">
+      <h3>Monthly Occupancy Assumptions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Jan</th>
+            <th>Feb</th>
+            <th>Mar</th>
+            <th>Apr</th>
+            <th>May</th>
+            <th>Jun</th>
+            <th>Jul</th>
+            <th>Aug</th>
+            <th>Sep</th>
+            <th>Oct</th>
+            <th>Nov</th>
+            <th>Dec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Occupancy (%)</td>
+            <td><input type="number" id="occJan" value="90"></td>
+            <td><input type="number" id="occFeb" value="85"></td>
+            <td><input type="number" id="occMar" value="70"></td>
+            <td><input type="number" id="occApr" value="50"></td>
+            <td><input type="number" id="occMay" value="30"></td>
+            <td><input type="number" id="occJun" value="20"></td>
+            <td><input type="number" id="occJul" value="25"></td>
+            <td><input type="number" id="occAug" value="25"></td>
+            <td><input type="number" id="occSep" value="30"></td>
+            <td><input type="number" id="occOct" value="40"></td>
+            <td><input type="number" id="occNov" value="60"></td>
+            <td><input type="number" id="occDec" value="80"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Resort-Specific Assumptions for 2.5‑Room Apartments -->
+    <div class="card">
+      <h3>Resort-Specific Assumptions (2.5‑Room)</h3>
+      <p>
+        Enter the Price per m² and 12 monthly ADR values for each resort.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Engelberg</th>
+            <th>Interlaken</th>
+            <th>Zermatt</th>
+            <th>Verbier</th>
+            <th>Davos</th>
+            <th>Laax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Price per m² -->
+          <tr>
+            <td>Price per m² (CHF)</td>
+            <td><input type="number" id="engPrice" value="11300"></td>
+            <td><input type="number" id="intPrice" value="10000"></td>
+            <td><input type="number" id="zerPrice" value="18000"></td>
+            <td><input type="number" id="verPrice" value="16000"></td>
+            <td><input type="number" id="davPrice" value="15000"></td>
+            <td><input type="number" id="laaxPrice" value="14000"></td>
+          </tr>
+          <!-- Monthly ADR rows -->
+          <tr>
+            <td>Monthly ADR Jan (CHF/night)</td>
+            <td><input type="number" id="engADRJan" value="200"></td>
+            <td><input type="number" id="intADRJan" value="160"></td>
+            <td><input type="number" id="zerADRJan" value="260"></td>
+            <td><input type="number" id="verADRJan" value="250"></td>
+            <td><input type="number" id="davADRJan" value="210"></td>
+            <td><input type="number" id="laaxADRJan" value="200"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Feb</td>
+            <td><input type="number" id="engADRFeb" value="210"></td>
+            <td><input type="number" id="intADRFeb" value="165"></td>
+            <td><input type="number" id="zerADRFeb" value="265"></td>
+            <td><input type="number" id="verADRFeb" value="255"></td>
+            <td><input type="number" id="davADRFeb" value="215"></td>
+            <td><input type="number" id="laaxADRFeb" value="205"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Mar</td>
+            <td><input type="number" id="engADRMar" value="180"></td>
+            <td><input type="number" id="intADRMar" value="150"></td>
+            <td><input type="number" id="zerADRMar" value="240"></td>
+            <td><input type="number" id="verADRMar" value="230"></td>
+            <td><input type="number" id="davADRMar" value="190"></td>
+            <td><input type="number" id="laaxADRMar" value="180"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Apr</td>
+            <td><input type="number" id="engADRApr" value="150"></td>
+            <td><input type="number" id="intADRApr" value="130"></td>
+            <td><input type="number" id="zerADRApr" value="210"></td>
+            <td><input type="number" id="verADRApr" value="205"></td>
+            <td><input type="number" id="davADRApr" value="170"></td>
+            <td><input type="number" id="laaxADRApr" value="160"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR May</td>
+            <td><input type="number" id="engADRMay" value="120"></td>
+            <td><input type="number" id="intADRMay" value="110"></td>
+            <td><input type="number" id="zerADRMay" value="190"></td>
+            <td><input type="number" id="verADRMay" value="185"></td>
+            <td><input type="number" id="davADRMay" value="150"></td>
+            <td><input type="number" id="laaxADRMay" value="140"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Jun</td>
+            <td><input type="number" id="engADRJun" value="100"></td>
+            <td><input type="number" id="intADRJun" value="90"></td>
+            <td><input type="number" id="zerADRJun" value="170"></td>
+            <td><input type="number" id="verADRJun" value="165"></td>
+            <td><input type="number" id="davADRJun" value="130"></td>
+            <td><input type="number" id="laaxADRJun" value="120"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Jul</td>
+            <td><input type="number" id="engADRJul" value="110"></td>
+            <td><input type="number" id="intADRJul" value="100"></td>
+            <td><input type="number" id="zerADRJul" value="180"></td>
+            <td><input type="number" id="verADRJul" value="170"></td>
+            <td><input type="number" id="davADRJul" value="135"></td>
+            <td><input type="number" id="laaxADRJul" value="125"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Aug</td>
+            <td><input type="number" id="engADRAug" value="110"></td>
+            <td><input type="number" id="intADRAug" value="100"></td>
+            <td><input type="number" id="zerADRAug" value="180"></td>
+            <td><input type="number" id="verADRAug" value="170"></td>
+            <td><input type="number" id="davADRAug" value="135"></td>
+            <td><input type="number" id="laaxADRAug" value="125"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Sep</td>
+            <td><input type="number" id="engADRSep" value="130"></td>
+            <td><input type="number" id="intADRSep" value="120"></td>
+            <td><input type="number" id="zerADRSep" value="200"></td>
+            <td><input type="number" id="verADRSep" value="190"></td>
+            <td><input type="number" id="davADRSep" value="155"></td>
+            <td><input type="number" id="laaxADRSep" value="145"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Oct</td>
+            <td><input type="number" id="engADROct" value="150"></td>
+            <td><input type="number" id="intADROct" value="140"></td>
+            <td><input type="number" id="zerADROct" value="220"></td>
+            <td><input type="number" id="verADROct" value="210"></td>
+            <td><input type="number" id="davADROct" value="175"></td>
+            <td><input type="number" id="laaxADROct" value="165"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Nov</td>
+            <td><input type="number" id="engADRNov" value="170"></td>
+            <td><input type="number" id="intADRNov" value="160"></td>
+            <td><input type="number" id="zerADRNov" value="240"></td>
+            <td><input type="number" id="verADRNov" value="230"></td>
+            <td><input type="number" id="davADRNov" value="195"></td>
+            <td><input type="number" id="laaxADRNov" value="185"></td>
+          </tr>
+          <tr>
+            <td>Monthly ADR Dec</td>
+            <td><input type="number" id="engADRDec" value="190"></td>
+            <td><input type="number" id="intADRDec" value="180"></td>
+            <td><input type="number" id="zerADRDec" value="260"></td>
+            <td><input type="number" id="verADRDec" value="250"></td>
+            <td><input type="number" id="davADRDec" value="215"></td>
+            <td><input type="number" id="laaxADRDec" value="205"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="calculate-btn" onclick="calculateModelNew()">Calculate</button>
+  </div>
+</body>
+</html>
